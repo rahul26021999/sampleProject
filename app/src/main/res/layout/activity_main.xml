@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/root_layout"
+    tools:context=".MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:minHeight="?attr/actionBarSize"
+        android:background="@drawable/action_bar_bkgnd">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:id="@+id/backButton"
+            android:src="@drawable/ic_arrow_back_black_24dp"
+            android:layout_height="24dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Preferences"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#fff"
+            android:layout_gravity="center"
+            android:id="@+id/toolbar_title" />
+
+
+    </android.support.v7.widget.Toolbar>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/ageRangeContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"
+                app:cardCornerRadius="5dp">
+
+                <RelativeLayout
+                    android:layout_width='match_parent'
+                    android:layout_height="wrap_content"
+                    android:padding="15dp">
+
+                    <TextView
+                        android:id="@+id/ageTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Age"
+                        android:textColor="#881647"
+                        android:layout_marginBottom="5dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="18-70"
+                        android:layout_marginRight="5dp"
+                        android:id="@+id/age"
+                        android:layout_toLeftOf="@+id/yearsTitle"
+                        android:textColor="#000"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="years"
+                        android:id="@+id/yearsTitle"
+                        android:textColor="#000"
+                        android:textStyle="bold" />
+
+                    <com.appyvet.materialrangebar.RangeBar
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/bar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:mrb_rangeBar="true"
+                        app:mrb_pinMaxFont="9sp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        app:mrb_pinMinFont="9sp"
+                        app:mrb_rangeBarPaddingBottom="20dp"
+                        app:mrb_tickStart="18"
+                        app:mrb_tickEnd="70"
+                        app:mrb_tickInterval="1"
+                        app:mrb_selectorColor="@color/lightgreen"
+                        app:mrb_pinTextColor="#fff"
+                        app:mrb_temporaryPins="true"
+                        app:mrb_selectorSize="8dp"
+                        app:mrb_tickHeight="0dp"
+                        app:mrb_pinRadius="10dp"
+                        app:mrb_rangeBar_rounded="true"
+                        app:mrb_connectingLineColor="@color/green"
+                        app:mrb_connectingLineWeight="4dp"
+                        app:mrb_pinColor="@color/green"/>
+
+                    <android.support.v7.widget.AppCompatSeekBar
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:layout_below="@+id/ageTitle"
+                        android:layout_marginTop="20dp" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <TextView
+                android:id="@+id/ageDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ageRangeContainer"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:text="Age range preference allows us to suggest matches accordingly.Some matches may fall outside the specified range."
+                android:textColor="#aaaaaa"
+                android:textSize="12sp" />
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/interestedInContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ageDesc"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="10dp"
+                app:cardCornerRadius="5dp">
+
+                <RelativeLayout
+                    android:layout_width='match_parent'
+                    android:layout_height="wrap_content"
+                    android:padding="15dp">
+
+                    <TextView
+                        android:id="@+id/interestedInTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="Interested In"
+                        android:textColor="#881647"
+                        android:textStyle="bold" />
+
+                    <android.support.v7.widget.SwitchCompat
+                        android:id="@+id/manSwitch"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:textColor="#000"
+                        android:checked="true"
+                        android:text="Men"
+                        android:layout_below="@+id/interestedInTitle"
+                        android:layout_marginTop="10dp"/>
+
+                    <android.support.v7.widget.SwitchCompat
+                        android:id="@+id/womenSwitch"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="Women"
+                        android:textColor="#000"
+                        android:layout_below="@+id/manSwitch"
+                        android:layout_marginTop="5dp" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <TextView
+                android:id="@+id/interestedDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/interestedInContainer"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:text="Pick your gender preference"
+                android:textColor="#aaaaaa"
+                android:textSize="12sp" />
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/alertContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/interestedDesc"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="10dp"
+                app:cardCornerRadius="5dp">
+
+                <RelativeLayout
+                    android:layout_width='match_parent'
+                    android:layout_height="wrap_content"
+                    android:padding="15dp">
+
+                    <TextView
+                        android:id="@+id/alertTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="Alerts"
+                        android:textColor="#881647"
+                        android:textStyle="bold" />
+
+                    <android.support.v7.widget.SwitchCompat
+                        android:id="@+id/soundSwitch"
+                        android:layout_width="match_parent"
+                        android:text="Sound"
+                        android:textColor="#000"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/alertTitle"
+                        android:layout_marginTop="10dp" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <TextView
+                android:id="@+id/alertDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/alertContainer"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:text="We strongly recommend to keep the notification ON. You don't want to miss a chat notification from your match."
+                android:textColor="#aaaaaa"
+                android:textSize="12sp" />
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/matchMakerContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/alertDesc"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="10dp"
+                app:cardCornerRadius="5dp">
+
+                <RelativeLayout
+                    android:layout_width='match_parent'
+                    android:layout_height="wrap_content"
+                    android:padding="15dp">
+
+                    <TextView
+                        android:id="@+id/matchMakerTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Matchmaker-Only Mode"
+                        android:textColor="#881647"
+                        android:layout_marginBottom="5dp"
+                        android:textStyle="bold" />
+
+                    <android.support.v7.widget.SwitchCompat
+                        android:id="@+id/hideSwitch"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/matchMakerTitle"
+                        android:layout_marginTop="10dp"
+                        android:text="Hide My Profile"
+                        android:textColor="#000" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <TextView
+                android:id="@+id/matchMakerDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/matchMakerContainer"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:text="Here to only help freind? Just hide your profile and be a match-maker"
+                android:textColor="#aaaaaa"
+                android:textSize="12sp" />
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/wishListContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/matchMakerDesc"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="10dp"
+                app:cardCornerRadius="5dp">
+
+                <RelativeLayout
+                    android:layout_width='match_parent'
+                    android:layout_height="wrap_content"
+                    android:padding="15dp">
+
+                    <TextView
+                        android:id="@+id/whiteListTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Whitelist my app"
+                        android:textColor="#000" />
+
+                    <Button
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentEnd="true"
+                        android:background="@drawable/rounded_go_button"
+                        android:text="go"
+                        android:textColor="#fff" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/wishListContainer"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:text="Get notification continuously by whiteListing our app from battery optimisation."
+                android:textColor="#aaaaaa"
+                android:textSize="12sp" />
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>
