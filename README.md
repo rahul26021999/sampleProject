@@ -1,7 +1,7 @@
-<b>A sample app for GoGaga Internship</b>
+# A sample app for GoGaga Internship
 
-<b>This a dating app which help people connect to each other</b>
+# This a dating app which help people connect to each other
 
-<b>Screenshots</b>
+# Screenshots
 
-![screenshot](file:///home/raystatic/Downloads/abc.jpeg?raw=true)
+![screenshot](https://user-images.githubusercontent.com/31301266/66072649-10f4f700-e573-11e9-9d43-1ccda6dc8639.jpeg)
